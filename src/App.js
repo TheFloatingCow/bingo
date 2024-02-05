@@ -1,36 +1,37 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
 
-import logo from './logo.svg';
-import pogImg from './poggers.png';
+import classes from './App.module.css'; // import css classes
 
-import classes from './App.css'
-
-import Home from './containers/Home/Home';
-import About from './containers/About/About';
-import Portfolio from './containers/Portfolio/Portfolio';
-import Toolbar from './components/Navigation/Toolbar/Toolbar';
 import Modal from './components/Modal/Modal';
-import './App.css';
+import ButtonMenu from './components/UI/ButtonMenu/ButtonMenu';
+import Board from './containers/Board/Board';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <img src={pogImg} className="Pog-logo" alt="logo" />
-        <p>
-          WEBSITE YEAAAAAA
-        </p>
-        <Home>
+class App extends Component {
 
-        </Home>
-        <About>
-          
-        </About>
-      </header>
-    </div>
-  );
+  state = {
+    editModalOpen: false
+  }
+
+  editHandler = () => {
+    this.setState( {editModalOpen: true})
+    console.log("Open modal")
+  }
+
+  editCancelHandler = () => {
+    this.setState( {editModalOpen: false})
+    console.log("Close modal")
+  }
+
+  render () {
+    return (
+      <main className={classes.App}>
+        <Modal show={this.state.editModalOpen} closeMenu={this.editCancelHandler}></Modal>
+        <p className={classes.Title}>monthly bingo</p>
+        <ButtonMenu openMenu={this.editHandler} closeMenu/>
+        <Board/>
+      </main>
+    );
+  }
 }
 
 export default App;
