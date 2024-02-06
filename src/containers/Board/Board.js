@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Aux from '../../hoc/Auxiliary/Auxiliary';
+import Grid from '@mui/material/Unstable_Grid2'; // Grid
 
 class Board extends Component {
 
