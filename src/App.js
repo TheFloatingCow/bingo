@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <main className={classes.App}>
         <Modal show={this.state.editModalOpen} closeMenu={this.editCancelHandler}></Modal>
-        <p className={classes.Title}>bingo</p>
+        <p className={classes.Title}>monthly bingo</p>
         <ButtonMenu openMenu={this.editHandler} closeMenu/>
         <Board/>
       </main>

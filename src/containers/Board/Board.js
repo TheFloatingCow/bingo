@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import classes from './Board.module.css'; //import classes
 import Aux from '../../hoc/Auxiliary/Auxiliary';
+import Box from '../../components/UI/Box/Box';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid
 
 class Board extends Component {
@@ -51,14 +52,17 @@ class Board extends Component {
         for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 5; j++) {
                 boardList.push(
-                    <Grid index={(i+1)*(j+1)} className={classes.Box} xs={2.3}>{i+1} {j+1}</Grid>
+                    <Box
+                        index={(i+1)*(j+1)}
+                        xs={2.2}
+                        height={160}>{i+1} {j+1}</Box>
                 )
             }
         }
 
         let board = (
             <Aux>
-                <Grid className={classes.Container} container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                <Grid className={classes.Container} container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
                     {boardList}
                 </Grid>
             </Aux>
