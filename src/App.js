@@ -5,6 +5,7 @@ import classes from './App.module.css'; // import css classes
 import Modal from './components/Modal/Modal';
 import ButtonMenu from './components/UI/ButtonMenu/ButtonMenu';
 import Board from './containers/Board/Board';
+import Title from './components/UI/Title/Title';
 
 class App extends Component {
 
@@ -29,7 +30,7 @@ class App extends Component {
           show={this.state.editModalOpen} 
           closeMenu={this.editCancelHandler} 
           clicked={this.editCancelHandler}></Modal>
-        <p className={classes.Title}>monthly bingo</p>
+        <Title>monthly bingo</Title>
         <ButtonMenu openMenu={this.editHandler} closeMenu/>
         <Board/>
       </main>
