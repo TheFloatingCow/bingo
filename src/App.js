@@ -25,7 +25,10 @@ class App extends Component {
   render () {
     return (
       <main className={classes.App}>
-        <Modal show={this.state.editModalOpen} closeMenu={this.editCancelHandler}></Modal>
+        <Modal 
+          show={this.state.editModalOpen} 
+          closeMenu={this.editCancelHandler} 
+          clicked={this.editCancelHandler}></Modal>
         <p className={classes.Title}>monthly bingo</p>
         <ButtonMenu openMenu={this.editHandler} closeMenu/>
         <Board/>
