@@ -29,7 +29,7 @@ class App extends Component {
                 <Modal
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
-                    clicked={this.editCancelHandler}></Modal>
+                    clicked={this.editCancelHandler}>Just modal things</Modal>
                 <Title>monthly bingo</Title>
                 <ButtonMenu openMenu={this.editHandler} closeMenu />
                 <Board />
