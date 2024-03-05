@@ -9,8 +9,8 @@ class ButtonMenu extends Component {
     render () {
         return (
             <div className={classes.ButtonMenu}>
-                <Button>NEW</Button>
-                <Button clicked={this.props.openMenu}>EDIT</Button>
+                <Button clicked={this.props.openNewMenu}>NEW</Button>
+                <Button clicked={this.props.openEditMenu}>EDIT</Button>
             </div>
         )
     }

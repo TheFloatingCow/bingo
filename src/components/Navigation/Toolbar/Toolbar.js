@@ -7,7 +7,7 @@ import Button from '../../UI/Button/Button';
 const toolbar = ( props ) => (
     <header className={classes.Toolbar}>
         <Button
-            clicked={props.addTraining}>Add training</Button>
+            clicked={props.addTraining}>A button</Button>
         <nav>
             <NavigationItems />
         </nav>

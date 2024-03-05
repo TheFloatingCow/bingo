@@ -10,17 +10,28 @@ import Title from './components/UI/Title/Title';
 class App extends Component {
 
     state = {
-        editModalOpen: false
+        editModalOpen: false,
+        newModalOpen: false
     }
 
     editHandler = () => {
         this.setState({ editModalOpen: true })
-        console.log("Open modal")
+        console.log("Open edit modal")
     }
 
     editCancelHandler = () => {
         this.setState({ editModalOpen: false })
-        console.log("Close modal")
+        console.log("Close edit modal")
+    }
+
+    newHandler = () => {
+        this.setState({ newModalOpen: true})
+        console.log("Open new modal")
+    }
+
+    newCancelHandler = () => {
+        this.setState({ newModalOpen: false })
+        console.log("Close new modal")
     }
 
     render() {
@@ -30,8 +41,12 @@ class App extends Component {
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
                     clicked={this.editCancelHandler}>Just modal things</Modal>
+                <Modal
+                    show={this.state.newModalOpen}
+                    closeMenu={this.newCancelHandler}
+                    clicked={this.newCancelHandler}>Are ya sure</Modal>
                 <Title>monthly bingo</Title>
-                <ButtonMenu openMenu={this.editHandler} closeMenu />
+                <ButtonMenu openEditMenu={this.editHandler} openNewMenu={this.newHandler}/>
                 <Board />
             </main>
         );
