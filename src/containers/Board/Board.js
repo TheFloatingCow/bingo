@@ -10,7 +10,7 @@ class Board extends Component {
     /*
     Data types:
     Monthly, Yearly
-    Academic, Driving, Sports,
+    General, Academic, Driving, Sports,
     */
     state = {
         data: {
