@@ -1,5 +1,10 @@
 .Container {
-    border: 2px solid black;
-    border-radius: 4px;
-    margin: auto;
+    /*border: 2px solid black;
+    border-radius: 4px;*/
+    aspect-ratio: 1 / 1;
+    width: auto;
+    height: auto;
+    max-width: 80vw;
+    max-height: 70vh;
+    box-sizing: border-box;
 }

@@ -56,8 +56,7 @@ class Board extends Component {
                 boardList.push(
                     <Box
                         key={key}
-                        xs={2.2}
-                        height={160}>{i+1} {j+1}</Box>
+                        xs={2.4}>{i+1} {j+1}</Box>
                 )
             }
         }

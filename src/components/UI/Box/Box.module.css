@@ -1,7 +1,7 @@
 .Box {
     background-color: transparent;
     border: 1px solid white;
-    border-radius: 3px;
+    /*border-radius: 3px;*/
     color: white;
     outline: none;
     cursor: pointer;
@@ -9,6 +9,8 @@
     font-weight: bold;
     transition-duration: 0.3s;
     margin: auto;
+    box-sizing: border-box;
+    aspect-ratio: 1 / 1;
 }
 
 .Box:hover {
