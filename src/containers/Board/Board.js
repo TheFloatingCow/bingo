@@ -48,12 +48,14 @@ class Board extends Component {
     render () {
         
         let boardList = [];
+        let key = 0;
 
         for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 5; j++) {
+                key++;
                 boardList.push(
                     <Box
-                        index={(i+1)*(j+1)}
+                        key={key}
                         xs={2.2}
                         height={160}>{i+1} {j+1}</Box>
                 )
