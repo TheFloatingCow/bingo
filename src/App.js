@@ -9,33 +9,33 @@ import Title from './components/UI/Title/Title';
 
 class App extends Component {
 
-  state = {
-    editModalOpen: false
-  }
+    state = {
+        editModalOpen: false
+    }
 
-  editHandler = () => {
-    this.setState( {editModalOpen: true})
-    console.log("Open modal")
-  }
+    editHandler = () => {
+        this.setState({ editModalOpen: true })
+        console.log("Open modal")
+    }
 
-  editCancelHandler = () => {
-    this.setState( {editModalOpen: false})
-    console.log("Close modal")
-  }
+    editCancelHandler = () => {
+        this.setState({ editModalOpen: false })
+        console.log("Close modal")
+    }
 
-  render () {
-    return (
-      <main className={classes.App}>
-        <Modal 
-          show={this.state.editModalOpen} 
-          closeMenu={this.editCancelHandler} 
-          clicked={this.editCancelHandler}></Modal>
-        <Title>monthly bingo</Title>
-        <ButtonMenu openMenu={this.editHandler} closeMenu/>
-        <Board/>
-      </main>
-    );
-  }
+    render() {
+        return (
+            <main className={classes.App}>
+                <Modal
+                    show={this.state.editModalOpen}
+                    closeMenu={this.editCancelHandler}
+                    clicked={this.editCancelHandler}></Modal>
+                <Title>monthly bingo</Title>
+                <ButtonMenu openMenu={this.editHandler} closeMenu />
+                <Board />
+            </main>
+        );
+    }
 }
 
 export default App;
