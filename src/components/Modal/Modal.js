@@ -5,11 +5,11 @@ import classes from './Modal.module.css';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
 
 class Modal extends Component {
-    render () {
+    render() {
         return (
             <Aux>
-                <Backdrop 
-                    show={this.props.show} 
+                <Backdrop
+                    show={this.props.show}
                     clicked={this.props.clicked} />
                 <div
                     className={classes.Modal}

@@ -27,7 +27,7 @@ class App extends Component {
     }
 
     newHandler = () => {
-        this.setState({ newModalOpen: true})
+        this.setState({ newModalOpen: true })
         console.log("Open new modal")
     }
 
@@ -43,14 +43,14 @@ class App extends Component {
                     id="EditModal"
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
-                    clicked={this.editCancelHandler}><EditModal/></Modal>
+                    clicked={this.editCancelHandler}><EditModal /></Modal>
                 <Modal
                     id="NewModal"
                     show={this.state.newModalOpen}
                     closeMenu={this.newCancelHandler}
-                    clicked={this.newCancelHandler}><NewModal/></Modal>
+                    clicked={this.newCancelHandler}><NewModal /></Modal>
                 <Title>monthly bingo</Title>
-                <ButtonMenu openEditMenu={this.editHandler} openNewMenu={this.newHandler}/>
+                <ButtonMenu openEditMenu={this.editHandler} openNewMenu={this.newHandler} />
                 <Board />
             </main>
         );
