@@ -50,7 +50,7 @@ class App extends Component {
                     closeMenu={this.newCancelHandler}
                     clicked={this.newCancelHandler}><NewModal /></Modal>
                 <Title>monthly bingo</Title>
-                <ButtonMenu openEditMenu={this.editHandler} openNewMenu={this.newHandler} />
+                <ButtonMenu button1func={this.newHandler} button2func={this.editHandler} />
                 <Board />
             </main>
         );

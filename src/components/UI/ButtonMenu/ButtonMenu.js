@@ -6,10 +6,12 @@ import classes from './ButtonMenu.module.css';
 
 const ButtonMenu = (props) => {
 
+    const {button1func, button2func} = props;
+
     return (
         <Aux className={classes.ButtonMenu}>
-            <Button clicked={props.openNewMenu}>NEW</Button>
-            <Button clicked={props.openEditMenu}>EDIT</Button>
+            <Button clicked={button1func}>NEW</Button>
+            <Button clicked={button2func}>EDIT</Button>
         </Aux>
     )
 }
