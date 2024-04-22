@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import classes from './Board.module.css'; //import classes
 import Aux from '../../hoc/Auxiliary/Auxiliary';
 import Box from '../../components/UI/Box/Box';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid
 
-const Board = () => {
+const Board = (props) => {
+
+    const { updateBoard, cancelUpdateBoard } = props;
 
     /*
     Data types:
     Monthly, Yearly
     General, Academic, Driving, Sports, Cooking, Work
     */
+
     const [monthData, setMonthData] = useState({
         general: [
             "general 1m",
             "general 2m",
             "general 3m",
-            "general 4m"
+            "general 4m",
+            "general 5m"
         ],
         academic: [
             "academic 1m",
@@ -56,7 +60,8 @@ const Board = () => {
             "general 1y",
             "general 2y",
             "general 3y",
-            "general 4y"
+            "general 4y",
+            "general 5y"
         ],
         academic: [
             "academic 1y",
@@ -90,9 +95,27 @@ const Board = () => {
         ]
     })
 
-    const [boardData, setBoardData] = useState([
-        "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
-    ])
+    const [boardData, setBoardData] = useState([])
+
+    const newBoard = () => {
+        setBoardData(boardData => {
+
+            let newBoardData = []
+
+            for (let index = 0; index < 25; index++) {
+                newBoardData.push("a");
+            }
+
+            return newBoardData;
+        })
+    }
+
+    useEffect(() => {
+        if (updateBoard) {
+            newBoard()
+            cancelUpdateBoard()
+        }
+    }, [updateBoard])
 
     let boardList = [];
     let key = 0;

@@ -13,7 +13,8 @@ class App extends Component {
 
     state = {
         editModalOpen: false,
-        newModalOpen: false
+        newModalOpen: false,
+        editUpdateBoard: true
     }
 
     editHandler = () => {
@@ -32,8 +33,13 @@ class App extends Component {
         this.setState({ newModalOpen: false })
     }
 
-    newBoardConfirm = () => {
+    newBoardHandler = () => {
+        this.setState({ editUpdateBoard: true })
         this.newCancelHandler()
+    }
+
+    newBoardCancelHandler = () => {
+        this.setState({ editUpdateBoard: false })
     }
 
     render() {
@@ -44,7 +50,7 @@ class App extends Component {
                     show={this.state.newModalOpen}
                     closeMenu={this.newCancelHandler}
                     clicked={this.newCancelHandler}>
-                    <NewModal closeMenu={this.newCancelHandler} newBoard={this.newBoardConfirm} />
+                    <NewModal closeMenu={this.newCancelHandler} newBoard={this.newBoardHandler} />
                 </Modal>
                 <Modal
                     id="EditModal"
@@ -60,7 +66,9 @@ class App extends Component {
                     button2Func={this.editHandler}
                     button1Text="NEW"
                     button2Text="EDIT" />
-                <Board />
+                <Board
+                    updateBoard={this.state.editUpdateBoard}
+                    cancelUpdateBoard={this.newBoardCancelHandler} />
             </main>
         );
     }
