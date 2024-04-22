@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
 import Button from '../Button/Button';
 import classes from './ButtonMenu.module.css';
 
-class ButtonMenu extends Component {
+const ButtonMenu = (props) => {
 
-    render () {
-        return (
-            <div className={classes.ButtonMenu}>
-                <Button clicked={this.props.openNewMenu}>NEW</Button>
-                <Button clicked={this.props.openEditMenu}>EDIT</Button>
-            </div>
-        )
-    }
+    return (
+        <Aux className={classes.ButtonMenu}>
+            <Button clicked={props.openNewMenu}>NEW</Button>
+            <Button clicked={props.openEditMenu}>EDIT</Button>
+        </Aux>
+    )
 }
 
 export default ButtonMenu;
