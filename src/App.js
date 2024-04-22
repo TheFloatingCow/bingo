@@ -18,39 +18,48 @@ class App extends Component {
 
     editHandler = () => {
         this.setState({ editModalOpen: true })
-        console.log("Open edit modal")
     }
 
     editCancelHandler = () => {
         this.setState({ editModalOpen: false })
-        console.log("Close edit modal")
     }
 
     newHandler = () => {
         this.setState({ newModalOpen: true })
-        console.log("Open new modal")
     }
 
     newCancelHandler = () => {
         this.setState({ newModalOpen: false })
-        console.log("Close new modal")
+    }
+
+    newBoardConfirm = () => {
+        this.newCancelHandler()
     }
 
     render() {
         return (
             <main className={classes.App}>
                 <Modal
-                    id="EditModal"
-                    show={this.state.editModalOpen}
-                    closeMenu={this.editCancelHandler}
-                    clicked={this.editCancelHandler}><EditModal /></Modal>
-                <Modal
                     id="NewModal"
                     show={this.state.newModalOpen}
                     closeMenu={this.newCancelHandler}
-                    clicked={this.newCancelHandler}><NewModal /></Modal>
+                    clicked={this.newCancelHandler}>
+                    <NewModal closeMenu={this.newCancelHandler} newBoard={this.newBoardConfirm} />
+                </Modal>
+                <Modal
+                    id="EditModal"
+                    show={this.state.editModalOpen}
+                    closeMenu={this.editCancelHandler}
+                    clicked={this.editCancelHandler}>
+                    <EditModal />
+                </Modal>
                 <Title>monthly bingo</Title>
-                <ButtonMenu button1func={this.newHandler} button2func={this.editHandler} />
+                <ButtonMenu
+                    menuType="Main"
+                    button1Func={this.newHandler}
+                    button2Func={this.editHandler}
+                    button1Text="NEW"
+                    button2Text="EDIT" />
                 <Board />
             </main>
         );
