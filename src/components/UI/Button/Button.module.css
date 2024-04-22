@@ -18,6 +18,10 @@
     border: 2px solid gray;
 }
 
+.Button:active {
+    border: 2px solid rgb(80, 80, 80);
+}
+
 /*
 .Button:first-of-type {
     margin-left: 0;
