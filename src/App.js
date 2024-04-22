@@ -6,6 +6,8 @@ import Modal from './components/Modal/Modal';
 import ButtonMenu from './components/UI/ButtonMenu/ButtonMenu';
 import Board from './containers/Board/Board';
 import Title from './components/UI/Title/Title';
+import EditModal from './containers/EditModal/EditModal';
+import NewModal from './containers/NewModal/NewModal';
 
 class App extends Component {
 
@@ -38,13 +40,15 @@ class App extends Component {
         return (
             <main className={classes.App}>
                 <Modal
+                    id="EditModal"
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
-                    clicked={this.editCancelHandler}>Just modal things</Modal>
+                    clicked={this.editCancelHandler}><EditModal/></Modal>
                 <Modal
+                    id="NewModal"
                     show={this.state.newModalOpen}
                     closeMenu={this.newCancelHandler}
-                    clicked={this.newCancelHandler}>Are ya sure</Modal>
+                    clicked={this.newCancelHandler}><NewModal/></Modal>
                 <Title>monthly bingo</Title>
                 <ButtonMenu openEditMenu={this.editHandler} openNewMenu={this.newHandler}/>
                 <Board />
