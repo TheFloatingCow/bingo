@@ -6,8 +6,8 @@ import Aux from '../../hoc/Auxiliary/Auxiliary';
 class EditModal extends Component {
     render () {
         return (
-            <Aux>
-                <p>EditModal contents</p>
+            <Aux className={classes.EditModal}>
+                EditModal contents
             </Aux>
         )
     }

@@ -6,8 +6,8 @@ import Aux from '../../hoc/Auxiliary/Auxiliary';
 class NewModal extends Component {
     render () {
         return (
-            <Aux>
-                <p>NewModal contents</p>
+            <Aux className={classes.NewModal}>
+                Create new board?
             </Aux>
         )
     }

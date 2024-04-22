@@ -2,7 +2,7 @@ import React from 'react';
 
 const Aux = (props) => {
     return (
-        <div>
+        <div className={props.className}>
             {props.children}
         </div>
     )
