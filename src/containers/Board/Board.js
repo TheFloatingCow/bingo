@@ -53,12 +53,11 @@ class Board extends Component {
         for (let i = 0; i < 5; i++) {
             for (let j = 0; j < 5; j++) {
                 key++;
-                let content = 
                 boardList.push(
                     <Box
                         key={key}
                         xs={2.4}>
-                            {key == 13 ? "FREEEEE\n" : "content\n"}
+                            {key === 13 ? "FREEEEE\n" : "content\n"}
                             {i+1} {j+1}</Box>
                 )
             }
