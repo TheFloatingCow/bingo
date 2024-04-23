@@ -24,7 +24,7 @@ const Board = (props) => {
         cooking: true,
         work: true
     })
-    
+
     const [monthData, setMonthData] = useState({
         general: [
             "general 1m",
@@ -125,7 +125,7 @@ const Board = (props) => {
                 }
             }
 
-            for (let index = 0; index < 25; index++) {
+            for (let index = 0; index < 24; index++) {
                 newBoardData.push(possibilities[index])
             }
 
@@ -156,17 +156,14 @@ const Board = (props) => {
         }
     }
 
-    let board = (
-        <Aux>
-            <Grid className={classes.Container} container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
-                {boardList}
-            </Grid>
-        </Aux>
-    )
-
     return (
         <Aux>
-            {board}
+            <Grid
+                className={classes.Container}
+                container rowSpacing={2}
+                columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
+                {boardList}
+            </Grid>
         </Aux>
     )
 }
