@@ -112,8 +112,21 @@ const Board = (props) => {
 
             let newBoardData = []
 
+            // Create array of possible square options
+            let possibilities = []
+            let keys = Object.keys(types)
+            let typeLen = keys.length
+
+            // Add possible squares to possibilities[]
+            for (let index = 1; index < typeLen; index++) {
+                let key = keys[index]
+                if (types[key]) {
+                    possibilities.push(...monthData[key])
+                }
+            }
+
             for (let index = 0; index < 25; index++) {
-                newBoardData.push("a");
+                newBoardData.push(possibilities[index])
             }
 
             return newBoardData;
