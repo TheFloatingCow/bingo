@@ -16,7 +16,7 @@ const Board = (props) => {
     */
 
     const [types, setTypes] = useState({
-        time: "month",
+        time: "year",
         general: true,
         academic: true,
         driving: true,
@@ -119,10 +119,14 @@ const Board = (props) => {
             let typeLen = keys.length
 
             // Add possible squares to possibilities[]
+            let dataArr = monthData
+            if (types["time"] === "year") {
+                dataArr = yearData
+            }
             for (let index = 1; index < typeLen; index++) {
                 let key = keys[index]
                 if (types[key]) {
-                    possibilities.push(...monthData[key])
+                    possibilities.push(...dataArr[key])
                 }
             }
 
