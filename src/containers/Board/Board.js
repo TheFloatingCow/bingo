@@ -15,6 +15,16 @@ const Board = (props) => {
     General, Academic, Driving, Sports, Cooking, Work
     */
 
+    const [types, setTypes] = useState({
+        time: "month",
+        general: true,
+        academic: true,
+        driving: true,
+        sports: true,
+        cooking: true,
+        work: true
+    })
+    
     const [monthData, setMonthData] = useState({
         general: [
             "general 1m",
