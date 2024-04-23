@@ -107,6 +107,7 @@ const Board = (props) => {
 
     const [boardData, setBoardData] = useState([])
 
+    // Create a new board from states
     const newBoard = () => {
         setBoardData(boardData => {
 
@@ -133,6 +134,7 @@ const Board = (props) => {
         })
     }
 
+    // Check if board should be updated
     useEffect(() => {
         if (updateBoard) {
             newBoard()
