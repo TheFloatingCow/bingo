@@ -151,7 +151,7 @@ const Board = (props) => {
                 <Box
                     key={key}
                     xs={2.4}>
-                    {key === 12 ? "FREE" : boardData[key]}
+                    {key === 12 ? "FREE" : (key > 12 ? boardData[key-1] : boardData[key])}
                 </Box>
             )
             key++;
