@@ -27,7 +27,7 @@ const Board = (props) => {
     })
     */
 
-    const [monthData, setMonthData] = useState({
+    const [monthData] = useState({
         general: [
             "general 1m",
             "general 2m",
@@ -67,7 +67,7 @@ const Board = (props) => {
         ]
     })
 
-    const [yearData, setYearData] = useState({
+    const [yearData] = useState({
         general: [
             "general 1y",
             "general 2y",
