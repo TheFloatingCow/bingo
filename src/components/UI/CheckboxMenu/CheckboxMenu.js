@@ -28,12 +28,12 @@ const CheckboxMenu = (props) => {
             return newChecked;
         });
     };
-    
+
     // Capitalize the first letter of word
     const capitalize = (word) => {
         return word[0].toUpperCase() + word.slice(1);
     }
-    
+
     // Create checklist
     let checklist = [];
 
