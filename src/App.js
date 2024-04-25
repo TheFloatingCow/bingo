@@ -16,7 +16,7 @@ class App extends Component {
         newModalOpen: false,
         editUpdateBoard: true,
         types: {
-            time: "year",
+            time: "month",
             general: true,
             academic: true,
             driving: true,

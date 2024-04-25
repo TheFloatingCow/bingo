@@ -11,8 +11,7 @@ const EditModal = (props) => {
 
     return (
         <Aux className={classes.EditModal}>
-            EditModal contents
-            <ToggleButtonMenu />
+            <ToggleButtonMenu types={types} />
             <CheckboxMenu types={types} />
         </Aux>
     )
