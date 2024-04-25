@@ -5,7 +5,7 @@ Make MonthlyYearly toggle
 Add logic to each toggle/checkbox
 Come up with challenges
 Add exit button to EditModal
-
+Make CheckboxMenu 2 columns instead of 1
 
 EVENTUALLY ----------------------------------
 Make everything look better
