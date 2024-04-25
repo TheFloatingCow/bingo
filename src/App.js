@@ -14,7 +14,16 @@ class App extends Component {
     state = {
         editModalOpen: false,
         newModalOpen: false,
-        editUpdateBoard: true
+        editUpdateBoard: true,
+        types: {
+            time: "year",
+            general: true,
+            academic: true,
+            driving: true,
+            sports: true,
+            cooking: true,
+            work: true
+        }
     }
 
     editHandler = () => {
@@ -67,6 +76,7 @@ class App extends Component {
                     button1Text="NEW"
                     button2Text="EDIT" />
                 <Board
+                    types={this.state.types}
                     updateBoard={this.state.editUpdateBoard}
                     cancelUpdateBoard={this.newBoardCancelHandler} />
             </main>

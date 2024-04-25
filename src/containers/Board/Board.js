@@ -7,7 +7,7 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid
 
 const Board = (props) => {
 
-    const { updateBoard, cancelUpdateBoard } = props;
+    const { types, updateBoard, cancelUpdateBoard } = props;
 
     /*
     Data types:
@@ -15,6 +15,7 @@ const Board = (props) => {
     General, Academic, Driving, Sports, Cooking, Work
     */
 
+    /* OLD STATE, TYPES NOW STORED IN App.js
     const [types, setTypes] = useState({
         time: "year",
         general: true,
@@ -24,6 +25,7 @@ const Board = (props) => {
         cooking: true,
         work: true
     })
+    */
 
     const [monthData, setMonthData] = useState({
         general: [
