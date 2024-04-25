@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import classes from './EditModal.module.css';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
@@ -6,7 +6,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from '@mui/material/Box';
-import TimeButton from "../../components/UI/TimeButton/TimeButton";
+import ToggleButton from "../../components/UI/ToggleButton/ToggleButton";
 
 const EditModal = (props) => {
 
@@ -61,6 +61,7 @@ const EditModal = (props) => {
     return (
         <Aux className={classes.EditModal}>
             EditModal contents
+            <ToggleButton />
             <FormGroup>
                 <FormControlLabel label="Select all" control={
                     <Checkbox

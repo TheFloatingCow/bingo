@@ -1,0 +1,10 @@
+.ToggleButton {
+    background-color: transparent;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+}
