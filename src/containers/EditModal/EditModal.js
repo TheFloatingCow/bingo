@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classes from './EditModal.module.css';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
@@ -8,9 +8,13 @@ import FormGroup from '@mui/material/FormGroup'; // FormGroup
 import FormControlLabel from '@mui/material/FormControlLabel'; // FormControlLabel
 import Box from '@mui/material/Box'; // Box
 
-const EditModal = () => {
+const EditModal = (props) => {
 
-    const [checked, setChecked] = React.useState([true, true]);
+    const { types } = props;
+
+    let keys = Object.keys(types)
+
+    const [checked, setChecked] = useState(Array(keys.length-1).fill(true));
 
     const handleChange1 = (event) => {
         setChecked([event.target.checked, event.target.checked]);
@@ -40,31 +44,26 @@ const EditModal = () => {
         setChecked([checked[0], event.target.checked]);
     };
 
-    let checkList = [];
+    // Capitalize the first letter of word
+    const capitalize = (word) => {
+        return word[0].toUpperCase() + word.slice(1);
+    }
+
+    let checklist = [];
     let key = 0;
 
-    
+    for (let i = 1; i < keys.length; i++) {
+        checklist.push(
+            <FormControlLabel
+                label={capitalize(keys[i])}
+                control={<Checkbox checked={checked[i-1]} onChange={handleChange2} size="large" />} />
+        )
+        key++;
+    }
 
     const children = (
         <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3 }}>
-            <FormControlLabel
-                label="General"
-                control={<Checkbox checked={checked[0]} onChange={handleChange2} size="large" />} />
-            <FormControlLabel
-                label="Academic"
-                control={<Checkbox checked={checked[1]} onChange={handleChange3} size="large" />} />
-            <FormControlLabel
-                label="Driving"
-                control={<Checkbox checked={checked[2]} onChange={handleChange4} size="large" />} />
-            <FormControlLabel
-                label="Sports"
-                control={<Checkbox checked={checked[3]} onChange={handleChange5} size="large" />} />
-            <FormControlLabel
-                label="Cooking"
-                control={<Checkbox checked={checked[4]} onChange={handleChange6} size="large" />} />
-            <FormControlLabel
-                label="Work"
-                control={<Checkbox checked={checked[5]} onChange={handleChange7} size="large" />} />
+            {checklist}
         </Box>
     );
 
