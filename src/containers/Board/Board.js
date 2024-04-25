@@ -65,7 +65,7 @@ const Board = (props) => {
             "work 3m",
             "work 4m"
         ]
-    })
+    });
 
     const [yearData] = useState({
         general: [
@@ -105,49 +105,49 @@ const Board = (props) => {
             "work 3y",
             "work 4y"
         ]
-    })
+    });
 
-    const [boardData, setBoardData] = useState([])
+    const [boardData, setBoardData] = useState([]);
 
     // Create a new board from states
     const newBoard = () => {
         setBoardData(boardData => {
 
-            let newBoardData = []
+            let newBoardData = [];
 
             // Create array of possible square options
-            let possibilities = []
-            let keys = Object.keys(types)
+            let possibilities = [];
+            let keys = Object.keys(types);
 
             // Add possible squares to possibilities[]
             let dataArr = monthData
             if (types["time"] === "year") {
-                dataArr = yearData
+                dataArr = yearData;
             }
             for (let index = 1; index < keys.length; index++) {
-                let key = keys[index]
+                let key = keys[index];
                 // If the type is selected, add it to possibilities
                 if (types[key]) {
-                    possibilities.push(...dataArr[key])
+                    possibilities.push(...dataArr[key]);
                 }
             }
 
             // Select possibilities to be on board
             for (let index = 0; index < 24; index++) {
-                const randomIndex = Math.floor(Math.random() * possibilities.length)
-                const chosenItem = possibilities.splice(randomIndex, 1)[0]
-                newBoardData.push(chosenItem)
+                const randomIndex = Math.floor(Math.random() * possibilities.length);
+                const chosenItem = possibilities.splice(randomIndex, 1)[0];
+                newBoardData.push(chosenItem);
             }
 
             return newBoardData;
-        })
-    }
+        });
+    };
 
     // Check if board should be updated
     useEffect(() => {
         if (updateBoard) {
-            newBoard()
-            cancelUpdateBoard()
+            newBoard();
+            cancelUpdateBoard();
         }
     }, [updateBoard]);
 
@@ -164,8 +164,8 @@ const Board = (props) => {
                 </Box>
             )
             key++;
-        }
-    }
+        };
+    };
 
     return (
         <Aux>
