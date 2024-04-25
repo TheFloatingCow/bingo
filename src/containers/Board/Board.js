@@ -149,7 +149,7 @@ const Board = (props) => {
             newBoard()
             cancelUpdateBoard()
         }
-    }, [updateBoard])
+    }, [updateBoard]);
 
     let boardList = [];
     let key = 0;
