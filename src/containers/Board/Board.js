@@ -118,14 +118,13 @@ const Board = (props) => {
             // Create array of possible square options
             let possibilities = []
             let keys = Object.keys(types)
-            let typeLen = keys.length
 
             // Add possible squares to possibilities[]
             let dataArr = monthData
             if (types["time"] === "year") {
                 dataArr = yearData
             }
-            for (let index = 1; index < typeLen; index++) {
+            for (let index = 1; index < keys.length; index++) {
                 let key = keys[index]
                 // If the type is selected, add it to possibilities
                 if (types[key]) {
