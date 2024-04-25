@@ -1,0 +1,12 @@
+Things to do maybe
+
+SOON ----------------------------------------
+Make MonthlyYearly toggle
+Add logic to each toggle/checkbox
+Come up with challenges
+
+
+EVENTUALLY ----------------------------------
+Make everything look better
+Add dark mode switch
+Add "Don't ask me again" button in NewModal
