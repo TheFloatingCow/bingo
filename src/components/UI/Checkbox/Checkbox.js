@@ -1,6 +1,7 @@
 import React from 'react';
 
-import classes from './Button.module.css';
+import classes from './Checkbox.module.css';
+import Checkbox from '@mui/material/Checkbox'; // Checkbox
 
 const checkbox = (props) => {
 
@@ -10,7 +11,7 @@ const checkbox = (props) => {
         <Checkbox
             disabled={props.disabled}
             type="button"
-            className={`${classes.Button} ${classes[btnType]}`}
+            className={`${classes.Checkbox} ${classes[btnType]}`}
             onClick={props.clicked}>{props.children}</Checkbox>
     )
 
