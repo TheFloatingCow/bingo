@@ -66,7 +66,7 @@ class App extends Component {
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
                     clicked={this.editCancelHandler}>
-                    <EditModal />
+                    <EditModal types={this.state.types} />
                 </Modal>
                 <Title>monthly bingo</Title>
                 <ButtonMenu
