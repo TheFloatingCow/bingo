@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import classes from './EditModal.module.css';
 import Aux from '../../hoc/Auxiliary/Auxiliary';
@@ -14,35 +14,20 @@ const EditModal = (props) => {
 
     let keys = Object.keys(types)
 
-    const [checked, setChecked] = useState(Array(keys.length-1).fill(true));
+    const [checked, setChecked] = useState(Array(keys.length - 1).fill(true));
 
-    const handleChange1 = (event) => {
+    const handleParentChange = (event) => {
         setChecked([event.target.checked, event.target.checked]);
     };
 
-    const handleChange2 = (event) => {
-        setChecked([event.target.checked, checked[1]]);
+    const handleChange = (event, key) => {
+        setChecked(checked => {
+            const newChecked = [...checked];
+            newChecked[key] = event.target.checked;
+            return newChecked;
+        });
     };
 
-    const handleChange3 = (event) => {
-        setChecked([checked[0], event.target.checked]);
-    };
-
-    const handleChange4 = (event) => {
-        setChecked([checked[0], event.target.checked]);
-    };
-
-    const handleChange5 = (event) => {
-        setChecked([checked[0], event.target.checked]);
-    };
-
-    const handleChange6 = (event) => {
-        setChecked([checked[0], event.target.checked]);
-    };
-
-    const handleChange7 = (event) => {
-        setChecked([checked[0], event.target.checked]);
-    };
 
     // Capitalize the first letter of word
     const capitalize = (word) => {
@@ -50,15 +35,18 @@ const EditModal = (props) => {
     }
 
     let checklist = [];
-    let key = 0;
 
     for (let i = 1; i < keys.length; i++) {
         checklist.push(
             <FormControlLabel
+                key={i - 1}
                 label={capitalize(keys[i])}
-                control={<Checkbox checked={checked[i-1]} onChange={handleChange2} size="large" />} />
+                control={<Checkbox
+                    key={i - 1}
+                    checked={checked[i - 1]}
+                    onChange={(event) => handleChange(event, i - 1)}
+                    size="large" />} />
         )
-        key++;
     }
 
     const children = (
@@ -75,7 +63,7 @@ const EditModal = (props) => {
                     <Checkbox
                         checked={checked[0] && checked[1]}
                         indeterminate={checked[0] !== checked[1]}
-                        onChange={handleChange1}
+                        onChange={handleParentChange}
                         size="large" />
                 } />
             </FormGroup>
