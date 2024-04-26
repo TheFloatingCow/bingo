@@ -26,29 +26,33 @@ class App extends Component {
         }
     }
 
+    editTypeHandler = (newTypes) => {
+        this.setState({ types: newTypes });
+    }
+
     editHandler = () => {
-        this.setState({ editModalOpen: true })
+        this.setState({ editModalOpen: true });
     }
 
     editCancelHandler = () => {
-        this.setState({ editModalOpen: false })
+        this.setState({ editModalOpen: false });
     }
 
     newHandler = () => {
-        this.setState({ newModalOpen: true })
+        this.setState({ newModalOpen: true });
     }
 
     newCancelHandler = () => {
-        this.setState({ newModalOpen: false })
+        this.setState({ newModalOpen: false });
     }
 
     newBoardHandler = () => {
-        this.setState({ editUpdateBoard: true })
+        this.setState({ editUpdateBoard: true });
         this.newCancelHandler()
     }
 
     newBoardCancelHandler = () => {
-        this.setState({ editUpdateBoard: false })
+        this.setState({ editUpdateBoard: false });
     }
 
     render() {
@@ -66,7 +70,7 @@ class App extends Component {
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
                     clicked={this.editCancelHandler}>
-                    <EditModal types={this.state.types} closeMenu={this.editCancelHandler} />
+                    <EditModal types={this.state.types} closeMenu={this.editCancelHandler} editTypes={this.editTypeHandler} />
                 </Modal>
                 <Title>monthly bingo</Title>
                 <ButtonMenu

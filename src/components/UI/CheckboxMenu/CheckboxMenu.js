@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import classes from './CheckboxMenu.module.css';
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
@@ -9,11 +9,21 @@ import Box from '@mui/material/Box';
 
 const CheckboxMenu = (props) => {
 
-    const { types } = props;
+    const { types, update } = props;
 
-    let keys = Object.keys(types)
+    let keys = Object.keys(types);
+    let length = keys.length;
 
-    const [checked, setChecked] = useState(Array(keys.length - 1).fill(true));
+    const [checked, setChecked] = useState(Array(length - 1).fill(true));
+
+    // Update parent state when state is changed
+    useEffect(() => {
+        let newTypes = {...types};
+        for (let i = 1; i < length; i++) {
+            newTypes[keys[i]] = checked[i-1];
+        }
+        update(newTypes);
+    }, [checked]);
 
     // Handle the Select all checkbox
     const handleParentChange = (event) => {
@@ -37,7 +47,7 @@ const CheckboxMenu = (props) => {
     // Create checklist
     let checklist = [];
 
-    for (let i = 1; i < keys.length; i++) {
+    for (let i = 1; i < length; i++) {
         checklist.push(
             <FormControlLabel
                 key={i - 1}

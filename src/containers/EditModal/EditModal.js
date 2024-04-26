@@ -8,12 +8,22 @@ import Button from '../../components/UI/Button/Button';
 
 const EditModal = (props) => {
 
-    const { types, closeMenu } = props;
+    const { types, closeMenu, editTypes } = props;
+
+    const updateTime = (newTime) => {
+        let newTypes = {...types};
+        newTypes["time"] = newTime;
+        editTypes(newTypes);
+    }
+    
+    const updateTypes = (newTypes) => {
+        editTypes(newTypes);
+    }
 
     return (
         <Aux className={classes.EditModal}>
-            <ToggleButtonMenu types={types} />
-            <CheckboxMenu types={types} />
+            <ToggleButtonMenu time={types["time"]} update={updateTime} />
+            <CheckboxMenu types={types} update={updateTypes} />
             <Button clicked={closeMenu} btnType="NewModal">Done</Button>
         </Aux>
     )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import classes from './ToggleButtonMenu.module.css';
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
@@ -7,9 +7,14 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 const ToggleButtonMenu = (props) => {
 
-    const { types } = props;
+    const { time, update } = props;
 
-    const [alignment, setAlignment] = useState(types["time"]);
+    const [alignment, setAlignment] = useState(time);
+
+    // Update parent state when state is changed
+    useEffect(() => {
+        update(alignment);
+    }, [alignment]);
 
     const handleChange = (event, newAlignment) => {
         if (newAlignment !== null) {
@@ -18,7 +23,7 @@ const ToggleButtonMenu = (props) => {
     };
 
     return (
-        <Aux >
+        <Aux className={classes.toggleButtonMenu}>
             <ToggleButtonGroup
                 color="primary"
                 value={alignment}
