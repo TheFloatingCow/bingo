@@ -25,7 +25,7 @@ const ToggleButtonMenu = (props) => {
                 exclusive
                 onChange={handleChange}
                 aria-label="Time" >
-                <ToggleButton selected className={classes.ToggleButton} value="month">Monthly</ToggleButton>
+                <ToggleButton className={classes.ToggleButton} value="month">Monthly</ToggleButton>
                 <ToggleButton className={classes.ToggleButton} value="year">Yearly</ToggleButton>
             </ToggleButtonGroup>
         </Aux>

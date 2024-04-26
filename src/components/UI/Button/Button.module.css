@@ -48,3 +48,9 @@
     color: black;
     border: 2px solid black;
 }
+
+.NewModal:hover {
+    transition-duration: 0.3s;
+    /*color: gray;*/
+    border: 2px solid #a8a8a8;
+}
