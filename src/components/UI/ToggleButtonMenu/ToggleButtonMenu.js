@@ -23,7 +23,7 @@ const ToggleButtonMenu = (props) => {
     };
 
     return (
-        <Aux className={classes.toggleButtonMenu}>
+        <Aux className={classes.ToggleButtonMenu}>
             <ToggleButtonGroup
                 color="primary"
                 value={alignment}

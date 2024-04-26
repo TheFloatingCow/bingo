@@ -1,3 +1,9 @@
 .CheckboxMenu {
+    margin-top: 10px;
+    margin-bottom: 10px;
     padding: 0px;
+    justify-content: center;
+    display: flex;
+    font: inherit;
+    font-size: 20px;
 }

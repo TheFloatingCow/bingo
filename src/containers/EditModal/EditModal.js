@@ -11,11 +11,11 @@ const EditModal = (props) => {
     const { types, closeMenu, editTypes } = props;
 
     const updateTime = (newTime) => {
-        let newTypes = {...types};
+        let newTypes = { ...types };
         newTypes["time"] = newTime;
         editTypes(newTypes);
     }
-    
+
     const updateTypes = (newTypes) => {
         editTypes(newTypes);
     }
