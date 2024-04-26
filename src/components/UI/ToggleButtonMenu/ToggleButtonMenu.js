@@ -12,19 +12,21 @@ const ToggleButtonMenu = (props) => {
     const [alignment, setAlignment] = useState(types["time"]);
 
     const handleChange = (event, newAlignment) => {
-        setAlignment(newAlignment);
+        if (newAlignment !== null) {
+            setAlignment(newAlignment);
+        }
     };
 
     return (
-        <Aux className={classes.ToggleButtonMenu}>
+        <Aux >
             <ToggleButtonGroup
                 color="primary"
                 value={alignment}
                 exclusive
                 onChange={handleChange}
                 aria-label="Time" >
-                <ToggleButton value="month">Monthly</ToggleButton>
-                <ToggleButton value="year">Yearly</ToggleButton>
+                <ToggleButton selected className={classes.ToggleButton} value="month">Monthly</ToggleButton>
+                <ToggleButton className={classes.ToggleButton} value="year">Yearly</ToggleButton>
             </ToggleButtonGroup>
         </Aux>
     )
