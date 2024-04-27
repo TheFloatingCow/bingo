@@ -34,11 +34,9 @@ const CheckboxMenu = (props) => {
 
     // Handle individual checkboxes
     const handleChange = (event, key) => {
-        setChecked(checked => {
-            const newChecked = [...checked];
-            newChecked[key] = event.target.checked;
-            return newChecked;
-        });
+        const newChecked = [...checked];
+        newChecked[key] = event.target.checked;
+        setChecked(newChecked);
     };
 
     // Capitalize the first letter of word
