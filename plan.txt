@@ -11,3 +11,6 @@ Make everything look better
 - Figure out modal styles
 - Background colour
 Add dark mode switch (maybe to EditModal)
+
+BUGS ---------------------------------------
+ToggleButton styling only works when it is updated, but resets when refreshed
