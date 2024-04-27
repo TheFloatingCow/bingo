@@ -3,7 +3,7 @@ Things to do maybe
 SOON ----------------------------------------
 Come up with challenges
 Make challenges clickable
-Fix maximum update depth
+Fix maximum update depth in ToggleButtonMenu, CheckboxMenu
 
 EVENTUALLY ----------------------------------
 Make everything look better
