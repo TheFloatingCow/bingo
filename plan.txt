@@ -3,15 +3,12 @@ Things to do maybe
 SOON ----------------------------------------
 Come up with challenges
 Make challenges clickable
-Fix maximum update depth in ToggleButtonMenu, CheckboxMenu
 
 EVENTUALLY ----------------------------------
 Make everything look better
-- Fix ToggleButton styling in EditModal
 - Make CheckboxMenu 2 columns instead of 1
 - Figure out modal styles
 - Background colour
 Add dark mode switch (maybe to EditModal)
 
 BUGS ---------------------------------------
-ToggleButton styling only works when it is updated, but resets when refreshed
