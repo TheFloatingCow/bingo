@@ -15,7 +15,7 @@ class App extends Component {
     state = {
         editModalOpen: false,
         newModalOpen: false,
-        errorModalOpen: true,
+        errorModalOpen: false,
         editUpdateBoard: true,
         types: {
             time: "month",
@@ -102,7 +102,8 @@ class App extends Component {
                 <Board
                     types={this.state.types}
                     updateBoard={this.state.editUpdateBoard}
-                    cancelUpdateBoard={this.newBoardCancelHandler} />
+                    cancelUpdateBoard={this.newBoardCancelHandler}
+                    openErrorModal={this.errorModalHandler} />
             </main>
         );
     }

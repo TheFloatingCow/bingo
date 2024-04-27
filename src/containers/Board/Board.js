@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 import classes from './Board.module.css'; //import classes
 import Aux from '../../hoc/Auxiliary/Auxiliary';
@@ -7,7 +7,7 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid
 
 const Board = (props) => {
 
-    const { types, updateBoard, cancelUpdateBoard } = props;
+    const { types, updateBoard, cancelUpdateBoard, openErrorModal } = props;
 
     /*
     Data types:
@@ -110,46 +110,49 @@ const Board = (props) => {
     const [boardData, setBoardData] = useState([]);
 
     // Create a new board from states
-    const newBoard = () => {
-        setBoardData(boardData => {
+    const newBoard = useCallback((types, monthData, yearData) => {
 
-            let newBoardData = [];
+        let newBoardData = [];
 
-            // Create array of possible square options
-            let possibilities = [];
-            let keys = Object.keys(types);
+        // Create array of possible square options
+        let possibilities = [];
+        let keys = Object.keys(types);
 
-            // Add possible squares to possibilities[]
-            let dataArr = monthData
-            if (types["time"] === "year") {
-                dataArr = yearData;
+        // Add possible squares to possibilities[]
+        let dataArr = monthData
+        if (types["time"] === "year") {
+            dataArr = yearData;
+        }
+        for (let index = 1; index < keys.length; index++) {
+            let key = keys[index];
+            // If the type is selected, add it to possibilities
+            if (types[key]) {
+                possibilities.push(...dataArr[key]);
             }
-            for (let index = 1; index < keys.length; index++) {
-                let key = keys[index];
-                // If the type is selected, add it to possibilities
-                if (types[key]) {
-                    possibilities.push(...dataArr[key]);
-                }
-            }
+        }
 
-            // Select possibilities to be on board
-            for (let index = 0; index < 24; index++) {
-                const randomIndex = Math.floor(Math.random() * possibilities.length);
-                const chosenItem = possibilities.splice(randomIndex, 1)[0];
-                newBoardData.push(chosenItem);
-            }
+        // Open Error Modal if there are not enough challenges
+        if (possibilities.length < 24) {
+            openErrorModal();
+        }
 
-            return newBoardData;
-        });
-    };
+        // Select possibilities to be on board
+        for (let index = 0; index < 24; index++) {
+            const randomIndex = Math.floor(Math.random() * possibilities.length);
+            const chosenItem = possibilities.splice(randomIndex, 1)[0];
+            newBoardData.push(chosenItem);
+        }
+
+        return newBoardData;
+    }, [openErrorModal]);
 
     // Check if board should be updated
     useEffect(() => {
         if (updateBoard) {
-            newBoard();
+            setBoardData(newBoard(types, monthData, yearData));
             cancelUpdateBoard();
         }
-    }, [updateBoard]);
+    }, [updateBoard, cancelUpdateBoard, newBoard, types, monthData, yearData]);
 
     let boardList = [];
     let key = 0;
@@ -160,7 +163,7 @@ const Board = (props) => {
                 <Box
                     key={key}
                     xs={2.4}>
-                    {key === 12 ? "FREE" : (key > 12 ? boardData[key-1] : boardData[key])}
+                    {key === 12 ? "FREE" : (key > 12 ? boardData[key - 1] : boardData[key])}
                 </Box>
             )
             key++;
