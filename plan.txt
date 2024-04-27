@@ -7,4 +7,4 @@ Get rid of missing dependency warnings
 
 EVENTUALLY ----------------------------------
 Make everything look better
-Add dark mode switch
+Add dark mode switch (maybe to EditModal)
