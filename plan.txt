@@ -3,8 +3,11 @@ Things to do maybe
 SOON ----------------------------------------
 Come up with challenges
 Make CheckboxMenu 2 columns instead of 1
-Get rid of missing dependency warnings
+Make challenges clickable
 
 EVENTUALLY ----------------------------------
 Make everything look better
+- Fix ToggleButton styling in EditModal
+- Figure out modal styles
+- Background colour
 Add dark mode switch (maybe to EditModal)
