@@ -15,6 +15,8 @@ const ToggleButtonMenu = (props) => {
     useEffect(() => {
         update(alignment);
     }, [alignment]);
+    // [update, alignment]
+    // update causes error
 
     const handleChange = (event, newAlignment) => {
         if (newAlignment !== null) {
@@ -29,7 +31,7 @@ const ToggleButtonMenu = (props) => {
                 value={alignment}
                 exclusive
                 onChange={handleChange}
-                aria-label="Time" >
+                aria-label="Time">
                 <ToggleButton className={classes.ToggleButton} value="month">Monthly</ToggleButton>
                 <ToggleButton className={classes.ToggleButton} value="year">Yearly</ToggleButton>
             </ToggleButtonGroup>

@@ -23,7 +23,9 @@ const CheckboxMenu = (props) => {
             newTypes[keys[i]] = checked[i - 1];
         }
         update(newTypes);
-    }, [checked, types, length, keys, update]);
+    }, [checked]);
+    // [checked, types, length, keys, update]
+    // types, keys, update CREATE LOOP i think
 
     // Handle the Select all checkbox
     const handleParentChange = (event) => {
