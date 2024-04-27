@@ -10,7 +10,7 @@ const ErrorModal = (props) => {
 
     return (
         <Aux className={classes.ErrorModal}>
-            Error: Not enough challenges have been selected. The board will be incomplete!
+            <Aux>Error: Not enough challenges have been selected. The board will be incomplete!</Aux>
             <Button clicked={closeMenu} btnType="NewModal">OK</Button>
         </Aux>
     )
