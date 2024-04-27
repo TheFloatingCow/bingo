@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import classes from './ToggleButtonMenu.module.css';
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
@@ -11,16 +11,10 @@ const ToggleButtonMenu = (props) => {
 
     const [alignment, setAlignment] = useState(time);
 
-    // Update parent state when state is changed
-    useEffect(() => {
-        update(alignment);
-    }, [alignment]);
-    // [update, alignment]
-    // update causes error
-
     const handleChange = (event, newAlignment) => {
         if (newAlignment !== null) {
             setAlignment(newAlignment);
+            update(newAlignment);
         }
     };
 
