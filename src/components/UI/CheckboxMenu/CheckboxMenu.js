@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import classes from './CheckboxMenu.module.css';
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
@@ -16,27 +16,33 @@ const CheckboxMenu = (props) => {
 
     const [checked, setChecked] = useState(Array(length - 1).fill(true));
 
-    // Update parent state when state is changed
-    useEffect(() => {
-        let newTypes = { ...types };
-        for (let i = 1; i < length; i++) {
-            newTypes[keys[i]] = checked[i - 1];
-        }
-        update(newTypes);
-    }, [checked]);
-    // [checked, types, length, keys, update]
-    // types, keys, update CREATE LOOP i think
-
     // Handle the Select all checkbox
     const handleParentChange = (event) => {
+        // Update checked state
         setChecked(Array.from({ length: checked.length }, () => event.target.checked));
+
+        // Sent state to parent
+        const newChecked = Array(length - 1).fill(event.target.checked);
+        let newTypes = { ...types };
+        for (let i = 1; i < length; i++) {
+            newTypes[keys[i]] = newChecked[i - 1];
+        }
+        update(newTypes);
     };
 
     // Handle individual checkboxes
     const handleChange = (event, key) => {
+        // Update checked state
         const newChecked = [...checked];
         newChecked[key] = event.target.checked;
         setChecked(newChecked);
+
+        // Send state to parent
+        let newTypes = { ...types };
+        for (let i = 1; i < length; i++) {
+            newTypes[keys[i]] = newChecked[i - 1];
+        }
+        update(newTypes);
     };
 
     // Capitalize the first letter of word
