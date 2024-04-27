@@ -18,12 +18,12 @@ const CheckboxMenu = (props) => {
 
     // Update parent state when state is changed
     useEffect(() => {
-        let newTypes = {...types};
+        let newTypes = { ...types };
         for (let i = 1; i < length; i++) {
-            newTypes[keys[i]] = checked[i-1];
+            newTypes[keys[i]] = checked[i - 1];
         }
         update(newTypes);
-    }, [checked]);
+    }, [checked, types, length, keys, update]);
 
     // Handle the Select all checkbox
     const handleParentChange = (event) => {
