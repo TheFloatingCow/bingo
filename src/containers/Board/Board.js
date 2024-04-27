@@ -110,7 +110,7 @@ const Board = (props) => {
     const [boardData, setBoardData] = useState([]);
 
     // Create a new board from states
-    const newBoard = useCallback((types, monthData, yearData) => {
+    const newBoard = useCallback(() => {
 
         let newBoardData = [];
 
@@ -144,15 +144,15 @@ const Board = (props) => {
         }
 
         return newBoardData;
-    }, [openErrorModal]);
+    }, [types, monthData, yearData, openErrorModal]);
 
     // Check if board should be updated
     useEffect(() => {
         if (updateBoard) {
-            setBoardData(newBoard(types, monthData, yearData));
+            setBoardData(newBoard());
             cancelUpdateBoard();
         }
-    }, [updateBoard, cancelUpdateBoard, newBoard, types, monthData, yearData]);
+    }, [updateBoard, cancelUpdateBoard, newBoard]);
 
     let boardList = [];
     let key = 0;
