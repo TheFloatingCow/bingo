@@ -1,7 +1,6 @@
 Things to do maybe
 
 SOON ----------------------------------------
-Throw error if not enough challenges selected
 Come up with challenges
 Make CheckboxMenu 2 columns instead of 1
 Get rid of missing dependency warnings
