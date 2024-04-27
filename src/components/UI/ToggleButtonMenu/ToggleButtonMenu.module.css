@@ -5,11 +5,10 @@
 }
 
 .ToggleButton {
-    font: inherit;
-    font-weight: bold;
-    font-size: 24px;
-    border: 2px solid black;
-    color: black;
+    font: inherit !important;
+    font-weight: bold !important;
+    font-size: 24px !important;
+    border: 2px solid black !important;
 }
 
 .ToggleButton:hover {
