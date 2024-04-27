@@ -8,12 +8,14 @@ import Board from './containers/Board/Board';
 import Title from './components/UI/Title/Title';
 import EditModal from './containers/EditModal/EditModal';
 import NewModal from './containers/NewModal/NewModal';
+import ErrorModal from './containers/ErrorModal/ErrorModal';
 
 class App extends Component {
 
     state = {
         editModalOpen: false,
         newModalOpen: false,
+        errorModalOpen: true,
         editUpdateBoard: true,
         types: {
             time: "month",
@@ -26,10 +28,7 @@ class App extends Component {
         }
     }
 
-    editTypeHandler = (newTypes) => {
-        this.setState({ types: newTypes });
-    }
-
+    // Modals
     editHandler = () => {
         this.setState({ editModalOpen: true });
     }
@@ -46,6 +45,20 @@ class App extends Component {
         this.setState({ newModalOpen: false });
     }
 
+    errorModalHandler = () => {
+        this.setState({ errorModalOpen: true });
+    }
+
+    errorModalCancelHandler = () => {
+        this.setState({ errorModalOpen: false });
+    }
+
+    // State
+    editTypeHandler = (newTypes) => {
+        this.setState({ types: newTypes });
+    }
+
+    // Board
     newBoardHandler = () => {
         this.setState({ editUpdateBoard: true });
         this.newCancelHandler()
@@ -71,6 +84,13 @@ class App extends Component {
                     closeMenu={this.editCancelHandler}
                     clicked={this.editCancelHandler}>
                     <EditModal types={this.state.types} closeMenu={this.editCancelHandler} editTypes={this.editTypeHandler} />
+                </Modal>
+                <Modal
+                    id="ErrorModal"
+                    show={this.state.errorModalOpen}
+                    closeMenu={this.errorModalCancelHandler}
+                    clicked={this.errorModalCancelHandler}>
+                    <ErrorModal closeMenu={this.errorModalCancelHandler} />
                 </Modal>
                 <Title>monthly bingo</Title>
                 <ButtonMenu
