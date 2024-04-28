@@ -12,7 +12,7 @@ const Board = (props) => {
     /*
     Data types:
     Monthly, Yearly
-    General, Academic, Driving, Sports, Cooking, Work
+    General, Academic, Driving, Sports, Cooking, Work, Gym
     */
 
     /* OLD STATE, TYPES NOW STORED IN App.js
