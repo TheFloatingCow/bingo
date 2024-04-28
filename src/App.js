@@ -12,6 +12,12 @@ import ErrorModal from './containers/ErrorModal/ErrorModal';
 
 class App extends Component {
 
+    /*
+    Data types:
+    Monthly, Yearly
+    General, Academic, Driving, Sports, Cooking, Work, Gym, Gaming
+    */
+   
     state = {
         editModalOpen: false,
         newModalOpen: false,

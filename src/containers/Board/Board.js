@@ -15,18 +15,6 @@ const Board = (props) => {
     General, Academic, Driving, Sports, Cooking, Work, Gym, Gaming
     */
 
-    /* OLD STATE, TYPES NOW STORED IN App.js
-    const [types, setTypes] = useState({
-        time: "year",
-        general: true,
-        academic: true,
-        driving: true,
-        sports: true,
-        cooking: true,
-        work: true
-    })
-    */
-
     const [monthData] = useState({
         general: [
             "general 1m",
