@@ -24,7 +24,8 @@ class App extends Component {
             driving: true,
             sports: true,
             cooking: true,
-            work: true
+            work: true,
+            gym: true
         }
     }
 

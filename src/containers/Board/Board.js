@@ -64,6 +64,12 @@ const Board = (props) => {
             "work 2m",
             "work 3m",
             "work 4m"
+        ],
+        gym: [
+            "gym 1m",
+            "gym 2m",
+            "gym 3m",
+            "gym 4m"
         ]
     });
 
@@ -104,6 +110,12 @@ const Board = (props) => {
             "work 2y",
             "work 3y",
             "work 4y"
+        ],
+        gym: [
+            "gym 1y",
+            "gym 2y",
+            "gym 3y",
+            "gym 4y"
         ]
     });
 
