@@ -39,7 +39,8 @@ const Board = (props) => {
             "driving 3m",
             "driving 4m",
             "See a car flipped over on the side of the road",
-            "Get pulled over while driving"
+            "Get pulled over while driving",
+            "Run a red light"
         ],
         sports: [
             "sports 1m",
@@ -54,14 +55,17 @@ const Board = (props) => {
             "cooking 3m",
             "cooking 4m",
             "Cause an allergic reaction",
-            "Set off the smoke detector while cooking"
+            "Set off the smoke detector while cooking",
+            "Burn something in the oven",
+            "Cook a new dish"
         ],
         work: [
             "work 1m",
             "work 2m",
             "work 3m",
             "work 4m",
-            "Get a new job"
+            "Get a new job",
+            "Quit your job"
         ],
         gym: [
             "gym 1m",
@@ -76,7 +80,8 @@ const Board = (props) => {
             "gaming 2m",
             "gaming 3m",
             "gaming 4m",
-            "Have someone call you a racial slur in voice chat"
+            "Have someone call you a racial slur in voice chat",
+            "Hit a new peak rank in any game"
         ]
     });
 
@@ -90,27 +95,33 @@ const Board = (props) => {
             "Get dumped",
             "Get arrested",
             "Go to the hospital",
-            "Get attacked by a wild animal"
+            "Get attacked by a wild animal",
+            "Get a new pet"
         ],
         academic: [
             "academic 1y",
             "academic 2y",
             "academic 3y",
             "academic 4y",
-            "Pass all of your courses"
+            "Pass all of your courses",
+            "Get a scholarship"
         ],
         driving: [
             "driving 1y",
             "driving 2y",
             "driving 3y",
             "driving 4y",
-            "Crash your car"
+            "Crash your car",
+            "Witness an accident on the road"
         ],
         sports: [
             "sports 1y",
             "sports 2y",
             "sports 3y",
-            "sports 4y"
+            "sports 4y",
+            "Podium at a large sports event",
+            "An olympian in your sport follows you",
+            "Run a marathon"
         ],
         cooking: [
             "cooking 1y",
@@ -137,7 +148,8 @@ const Board = (props) => {
             "gaming 2y",
             "gaming 3y",
             "gaming 4y",
-            "Get DDOS'd"
+            "Get DDOS'd",
+            "Log 1000 hours in a game in a year"
         ]
     });
 
