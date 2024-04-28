@@ -12,7 +12,7 @@ const Board = (props) => {
     /*
     Data types:
     Monthly, Yearly
-    General, Academic, Driving, Sports, Cooking, Work, Gym
+    General, Academic, Driving, Sports, Cooking, Work, Gym, Gaming
     */
 
     /* OLD STATE, TYPES NOW STORED IN App.js
@@ -33,43 +33,62 @@ const Board = (props) => {
             "general 2m",
             "general 3m",
             "general 4m",
-            "general 5m"
+            "general 5m",
+            "Call 911 for any reason",
+            "Set off the fire alarm",
+            "Go to a new restaurant"
         ],
         academic: [
             "academic 1m",
             "academic 2m",
             "academic 3m",
-            "academic 4m"
+            "academic 4m",
+            "Fail a test"
         ],
         driving: [
             "driving 1m",
             "driving 2m",
             "driving 3m",
-            "driving 4m"
+            "driving 4m",
+            "See a car flipped over on the side of the road",
+            "Get pulled over while driving"
         ],
         sports: [
             "sports 1m",
             "sports 2m",
             "sports 3m",
-            "sports 4m"
+            "sports 4m",
+            "Go to a competition for your sport"
         ],
         cooking: [
             "cooking 1m",
             "cooking 2m",
             "cooking 3m",
-            "cooking 4m"
+            "cooking 4m",
+            "Cause an allergic reaction",
+            "Set off the smoke detector while cooking"
         ],
         work: [
             "work 1m",
             "work 2m",
             "work 3m",
-            "work 4m"
+            "work 4m",
+            "Get a new job"
         ],
         gym: [
             "gym 1m",
             "gym 2m",
             "gym 3m",
-            "gym 4m"
+            "gym 4m",
+            "Hit a new PR at the gym",
+            "Someone compliments your physique"
+        ],
+        gaming: [
+            "gaming 1m",
+            "gaming 2m",
+            "gaming 3m",
+            "gaming 4m",
+            "Have someone call you a racial slur in voice chat"
         ]
     });
 
@@ -79,19 +98,25 @@ const Board = (props) => {
             "general 2y",
             "general 3y",
             "general 4y",
-            "general 5y"
+            "general 5y",
+            "Get dumped",
+            "Get arrested",
+            "Go to the hospital",
+            "Get attacked by a wild animal"
         ],
         academic: [
             "academic 1y",
             "academic 2y",
             "academic 3y",
-            "academic 4y"
+            "academic 4y",
+            "Pass all of your courses"
         ],
         driving: [
             "driving 1y",
             "driving 2y",
             "driving 3y",
-            "driving 4y"
+            "driving 4y",
+            "Crash your car"
         ],
         sports: [
             "sports 1y",
@@ -109,13 +134,22 @@ const Board = (props) => {
             "work 1y",
             "work 2y",
             "work 3y",
-            "work 4y"
+            "work 4y",
+            "Get fired",
+            "Get a promotion"
         ],
         gym: [
             "gym 1y",
             "gym 2y",
             "gym 3y",
             "gym 4y"
+        ],
+        gaming: [
+            "gaming 1y",
+            "gaming 2y",
+            "gaming 3y",
+            "gaming 4y",
+            "Get DDOS'd"
         ]
     });
 
