@@ -3,6 +3,7 @@ Things to do maybe
 SOON ----------------------------------------
 Come up with challenges
 Make challenges clickable
+Board does not generate on first render
 
 EVENTUALLY ----------------------------------
 Make everything look better
