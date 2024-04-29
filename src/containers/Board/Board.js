@@ -34,12 +34,14 @@ const Board = (props) => {
             "Go camping",
             "Try a new ice cream or boba flavour",
             "See fireworks",
-            "Go on a hike"
+            "Go on a hike",
+            "Visit a new place"
         ],
         academic: [
-            "Fail a test",
+            "Fail a test/quiz",
             "Got to another school campus",
-            "Study as much as you said you would"
+            "Study as much as you said you would",
+            "Pass all your tests/quizzes"
         ],
         driving: [
             "See a car flipped over on the side of the road",
@@ -88,7 +90,8 @@ const Board = (props) => {
             "Don't get sick all year",
             "Go camping",
             "Finish a book in a new genre",
-            "Go to a city you've never been to before"
+            "Visit a new city",
+            "Visit a new country"
         ],
         academic: [
             "Pass all of your courses",
@@ -116,7 +119,7 @@ const Board = (props) => {
             "Get a promotion"
         ],
         gym: [
-            "Ask someone out/ get asked out at the gym"
+            "Ask someone out/get asked out at the gym"
         ],
         gaming: [
             "Get DDOS'd",
@@ -174,14 +177,16 @@ const Board = (props) => {
 
     let boardList = [];
     let key = 0;
+    let size = 5;
+    let center = (size ** 2 - 1)/2;
 
-    for (let i = 0; i < 5; i++) {
-        for (let j = 0; j < 5; j++) {
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size; j++) {
             boardList.push(
                 <Box
                     key={key}
-                    xs={2.4}>
-                    {key === 12 ? "FREE" : (key > 12 ? boardData[key - 1] : boardData[key])}
+                    xs={12/size}>
+                    {key === center ? "FREE" : (key > center ? boardData[key - 1] : boardData[key])}
                 </Box>
             )
             key++;
