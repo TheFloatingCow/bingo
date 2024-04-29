@@ -10,5 +10,6 @@ Make everything look better
 - Figure out modal styles
 - Background colour
 Add dark mode switch (maybe to EditModal)
+Add board size editor
 
 BUGS ---------------------------------------
