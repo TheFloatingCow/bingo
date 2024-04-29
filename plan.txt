@@ -11,5 +11,6 @@ Make everything look better
 - Background colour
 Add dark mode switch (maybe to EditModal)
 Add board size editor
+Add calendar due date
 
 BUGS ---------------------------------------
