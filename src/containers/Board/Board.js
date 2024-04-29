@@ -17,139 +17,111 @@ const Board = (props) => {
 
     const [monthData] = useState({
         general: [
-            "general 1m",
-            "general 2m",
-            "general 3m",
-            "general 4m",
-            "general 5m",
             "Call 911 for any reason",
             "Set off the fire alarm",
-            "Go to a new restaurant"
+            "Go to a new restaurant",
+            "Finish a book",
+            "Get new shoes",
+            "Do volunteering",
+            "Write a letter",
+            "Get sick",
+            "Don't get sick all month",
+            "Don't check your phone for a whole day",
+            "Visit a museum or art gallery",
+            "Keep a plant alive all month",
+            "Take a picture every day of the month",
+            "Watch 3 movies in a day",
+            "Go camping",
+            "Try a new ice cream or boba flavour",
+            "See fireworks",
+            "Go on a hike"
         ],
         academic: [
-            "academic 1m",
-            "academic 2m",
-            "academic 3m",
-            "academic 4m",
-            "Fail a test"
+            "Fail a test",
+            "Got to another school campus",
+            "Study as much as you said you would"
         ],
         driving: [
-            "driving 1m",
-            "driving 2m",
-            "driving 3m",
-            "driving 4m",
             "See a car flipped over on the side of the road",
             "Get pulled over while driving",
-            "Run a red light"
+            "Run a red light",
+            "Drive past some cows and say moo"
         ],
         sports: [
-            "sports 1m",
-            "sports 2m",
-            "sports 3m",
-            "sports 4m",
-            "Go to a competition for your sport"
+            "Go to a competition for your sport",
+            "Go to a sports game"
         ],
         cooking: [
-            "cooking 1m",
-            "cooking 2m",
-            "cooking 3m",
-            "cooking 4m",
-            "Cause an allergic reaction",
             "Set off the smoke detector while cooking",
             "Burn something in the oven",
             "Cook a new dish"
         ],
         work: [
-            "work 1m",
-            "work 2m",
-            "work 3m",
-            "work 4m",
             "Get a new job",
-            "Quit your job"
+            "Quit your job",
+            "Meet your monthly goal at work",
+            "Get employee of the month",
+            "Miss a lunch break"
         ],
         gym: [
-            "gym 1m",
-            "gym 2m",
-            "gym 3m",
-            "gym 4m",
             "Hit a new PR at the gym",
-            "Someone compliments your physique"
+            "Someone compliments your physique",
+            "Hit legs at least once a week",
+            "Hit the gym 5 times in a week",
+            "Spend more than 2 hours at the gym",
+            "Stretch at least 3 times a week"
         ],
         gaming: [
-            "gaming 1m",
-            "gaming 2m",
-            "gaming 3m",
-            "gaming 4m",
             "Have someone call you a racial slur in voice chat",
-            "Hit a new peak rank in any game"
+            "Hit a new peak rank in any game",
+            "Complete a video game"
         ]
     });
 
     const [yearData] = useState({
         general: [
-            "general 1y",
-            "general 2y",
-            "general 3y",
-            "general 4y",
-            "general 5y",
             "Get dumped",
             "Get arrested",
             "Go to the hospital",
             "Get attacked by a wild animal",
-            "Get a new pet"
+            "Get a new pet",
+            "Don't get sick all year",
+            "Go camping",
+            "Finish a book in a new genre",
+            "Go to a city you've never been to before"
         ],
         academic: [
-            "academic 1y",
-            "academic 2y",
-            "academic 3y",
-            "academic 4y",
             "Pass all of your courses",
-            "Get a scholarship"
+            "Get a scholarship",
+            "Pass all your finals"
         ],
         driving: [
-            "driving 1y",
-            "driving 2y",
-            "driving 3y",
-            "driving 4y",
             "Crash your car",
-            "Witness an accident on the road"
+            "Witness an accident on the road",
+            "Go on a road trip"
         ],
         sports: [
-            "sports 1y",
-            "sports 2y",
-            "sports 3y",
-            "sports 4y",
             "Podium at a large sports event",
             "An olympian in your sport follows you",
-            "Run a marathon"
+            "Run a marathon",
+            "Try a new sport"
         ],
         cooking: [
-            "cooking 1y",
-            "cooking 2y",
-            "cooking 3y",
-            "cooking 4y"
+            "Cause an allergic reaction with your cooking",
+            "Start a fire in the kitchen",
+            "Take a cooking class"
         ],
         work: [
-            "work 1y",
-            "work 2y",
-            "work 3y",
-            "work 4y",
             "Get fired",
             "Get a promotion"
         ],
         gym: [
-            "gym 1y",
-            "gym 2y",
-            "gym 3y",
-            "gym 4y"
+            "Ask someone out/ get asked out at the gym"
         ],
         gaming: [
-            "gaming 1y",
-            "gaming 2y",
-            "gaming 3y",
-            "gaming 4y",
             "Get DDOS'd",
-            "Log 1000 hours in a game in a year"
+            "Log 1000 hours in a game in a year",
+            "100% a video game"
         ]
     });
 
