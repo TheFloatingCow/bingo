@@ -177,15 +177,15 @@ const Board = (props) => {
 
     let boardList = [];
     let key = 0;
-    let size = 5;
-    let center = (size ** 2 - 1)/2;
+    let boardSize = 5;
+    let center = (boardSize ** 2 - 1)/2;
 
-    for (let i = 0; i < size; i++) {
-        for (let j = 0; j < size; j++) {
+    for (let i = 0; i < boardSize; i++) {
+        for (let j = 0; j < boardSize; j++) {
             boardList.push(
                 <Box
                     key={key}
-                    xs={12/size}>
+                    xs={12/boardSize}>
                     {key === center ? "FREE" : (key > center ? boardData[key - 1] : boardData[key])}
                 </Box>
             )
