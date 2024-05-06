@@ -17,7 +17,6 @@ const Board = (props) => {
 
     const [monthData] = useState({
         general: [
-            "Call 911 for any reason",
             "Set off the fire alarm",
             "Go to a new restaurant",
             "Finish a book",
@@ -91,7 +90,8 @@ const Board = (props) => {
             "Go camping",
             "Finish a book in a new genre",
             "Visit a new city",
-            "Visit a new country"
+            "Visit a new country",
+            "Call 911 for any reason"
         ],
         academic: [
             "Pass all of your courses",
