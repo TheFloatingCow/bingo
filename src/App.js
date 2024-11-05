@@ -15,10 +15,11 @@ class App extends Component {
     /*
     Data types:
     Monthly, Yearly
-    General, Academic, Driving, Sports, Cooking, Work, Gym, Gaming
+    General, Academic, Driving, Sports, Cooking, Work, Gym, Gaming, Voice Lines
     */
    
     state = {
+        backgroundColour: "#6abcff",
         editModalOpen: false,
         newModalOpen: false,
         errorModalOpen: false,
@@ -32,7 +33,8 @@ class App extends Component {
             cooking: true,
             work: true,
             gym: true,
-            gaming: true
+            gaming: true,
+            voiceline: true
         }
     }
 
@@ -69,6 +71,7 @@ class App extends Component {
     // Board
     newBoardHandler = () => {
         this.setState({ editUpdateBoard: true });
+        this.setState({backgroundColour: this.getRandomColour()});
         this.newCancelHandler()
     }
 
@@ -76,9 +79,19 @@ class App extends Component {
         this.setState({ editUpdateBoard: false });
     }
 
+    getRandomColour = () => {
+        return "hsl(" + 360 * Math.random() + "," +
+                (30 + 65 * Math.random()) + "%," + 
+                (80 + 10 * Math.random()) + "%)";
+    }
+
+    componentDidMount() {
+        this.setState({backgroundColour: this.getRandomColour()});
+    }
+
     render() {
         return (
-            <main className={classes.App}>
+            <main className={classes.App} style={{backgroundColor: this.state.backgroundColour}}>
                 <Modal
                     id="NewModal"
                     show={this.state.newModalOpen}
