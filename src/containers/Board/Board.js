@@ -12,7 +12,7 @@ const Board = (props) => {
     /*
     Data types:
     Monthly, Yearly
-    General, Academic, Driving, Sports, Cooking, Work, Gym, Gaming
+    General, Academic, Driving, Sports, Cooking, Work, Gym, Gaming, Voice Lines
     */
 
     const [monthData] = useState({
@@ -75,7 +75,62 @@ const Board = (props) => {
         gaming: [
             "Have someone call you a racial slur in voice chat",
             "Hit a new peak rank in any game",
-            "Complete a video game"
+            "Complete a singleplayer video game"
+        ],
+        voiceline: [
+            "I got railed",
+            "Shot on my back",
+            "*Yells*",
+            "What the sigma",
+            "Bro/Bruh",
+            "These guys are so weird",
+            "HELP",
+            "They're coming",
+            "Pause",
+            "What?",
+            "Type shit",
+            "Flip",
+            "*Gets hyped*",
+            "You're crazy",
+            "Built different",
+            "You're better",
+            "They must be cheating",
+            "Cooked",
+            "Cooking",
+            "Let me cook",
+            "Goated",
+            "Vro",
+            "Ayo?",
+            "Talk to randoms",
+            "Erm actually",
+            "Good shit/job",
+            "*Whiff horribly*",
+            "You're him/that guy",
+            "Slay",
+            "Lets go",
+            "What are they doing",
+            "Where was he looking",
+            "Does he clutch?",
+            "If you clutch I'll ______",
+            "I'm so bad",
+            "LAG",
+            "They're smurfing", 
+            "How did that not hit",
+            "No way",
+            "Behind you",
+            "*Weird laugh*",
+            "Move",
+            "*Blames teammate*",
+            "Where was he?",
+            "That's crazy",
+            "Why",
+            "Chat",
+            "Erm",
+            "Joever",
+            "*Random accent*",
+            "Lock in",
+            "*Starts singing*",
+            "Nice try"
         ]
     });
 
@@ -125,6 +180,9 @@ const Board = (props) => {
             "Get DDOS'd",
             "Log 1000 hours in a game in a year",
             "100% a video game"
+        ],
+        voiceline: [
+            "This is a placeholder"
         ]
     });
 
