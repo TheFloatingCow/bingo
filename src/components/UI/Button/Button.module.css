@@ -12,11 +12,14 @@
 .Button:hover {
     transition-duration: 0.3s;
     /*color: gray;*/
-    border: 2px solid gray;
+    border: 2px solid rgb(82, 82, 82);
+    color: rgb(82, 82, 82);
 }
 
 .Button:active {
-    border: 2px solid rgb(80, 80, 80);
+    transition-duration: 0s;
+    border: 2px solid black;
+    color: black;
 }
 
 /*
@@ -40,8 +43,8 @@
 }
 
 .Main {
-    color: white;
-    border: 2px solid white;
+    color: black;
+    border: 2px solid black;
 }
 
 .NewModal {

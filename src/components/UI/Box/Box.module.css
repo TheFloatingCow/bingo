@@ -1,8 +1,8 @@
 .Box {
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid black;
     /*border-radius: 3px;*/
-    color: white;
+    color: black;
     outline: none;
     cursor: pointer;
     font: inherit;
