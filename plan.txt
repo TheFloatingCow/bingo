@@ -2,7 +2,7 @@ Things to do maybe
 
 SOON ----------------------------------------
 Come up with challenges
-Make challenges clickable
+Make challenges clickable to toggle check
 
 EVENTUALLY ----------------------------------
 Make everything look better
