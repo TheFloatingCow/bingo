@@ -101,8 +101,7 @@ const Board = (props) => {
             "Goated",
             "Vro",
             "Ayo?",
-            "Talk to randoms",
-            "Erm actually",
+            "*Talk to randoms*",
             "Good shit/job",
             "*Whiff horribly*",
             "You're him/that guy",
@@ -130,7 +129,14 @@ const Board = (props) => {
             "*Random accent*",
             "Lock in",
             "*Starts singing*",
-            "Nice try"
+            "Nice try",
+            "OMG",
+            "Ur mom",
+            "Nuh uh",
+            "PLEASE",
+            "Clip that/Clipped",
+            "Gang",
+            "My fault"
         ]
     });
 
