@@ -99,7 +99,6 @@ const Board = (props) => {
             "Cooking",
             "Let me cook",
             "Goated",
-            "Vro",
             "Ayo?",
             "*Talk to randoms*",
             "Good shit/job",
@@ -130,13 +129,14 @@ const Board = (props) => {
             "Lock in",
             "*Starts singing*",
             "Nice try",
-            "OMG",
+            "Oh my god",
             "Ur mom",
             "Nuh uh",
             "PLEASE",
             "Clip that/Clipped",
             "Gang",
-            "My fault"
+            "My fault",
+            "Sus"
         ]
     });
 
