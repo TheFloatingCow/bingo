@@ -15,7 +15,8 @@ Make everything look better
 Add dark mode switch (maybe to EditModal)
 Add board size editor
 Add calendar due date (timer)
-Add own boxes
+Add your own challenges
+Use localStorage to save theme and settings
 
 FAR FUTURE ---------------------------------
 Save stats of how many boards completed in a year etc.
