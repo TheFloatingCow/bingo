@@ -98,7 +98,9 @@ class App extends Component {
 
     render() {
         return (
-            <main className={`${classes.Light} ${this.state.theme === "dark" ? classes.Dark : classes.Light}`} style={{backgroundColor: this.state.backgroundColour}}>
+            <main className={`${classes.Light}
+                              ${this.state.theme === "dark" ? classes.Dark : classes.Light}`}
+                              style={{backgroundColor: this.state.backgroundColour}}>
                 <Modal
                     id="NewModal"
                     show={this.state.newModalOpen}
@@ -126,9 +128,10 @@ class App extends Component {
                     button1Func={this.newHandler}
                     button2Func={this.editHandler}
                     button1Text="NEW"
-                    button2Text="EDIT" />
+                    button2Text="EDIT"
+                    theme={this.state.theme} />
                 <Board
-                    types={this.state.types}
+                    state={this.state}
                     updateBoard={this.state.editUpdateBoard}
                     cancelUpdateBoard={this.newBoardCancelHandler}
                     openErrorModal={this.errorModalHandler} />

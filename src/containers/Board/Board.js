@@ -7,7 +7,7 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid
 
 const Board = (props) => {
 
-    const { types, updateBoard, cancelUpdateBoard, openErrorModal } = props;
+    const { state, updateBoard, cancelUpdateBoard, openErrorModal } = props;
 
     /*
     Data types:
@@ -201,17 +201,17 @@ const Board = (props) => {
 
         // Create array of possible square options
         let possibilities = [];
-        let keys = Object.keys(types);
+        let keys = Object.keys(state.types);
 
         // Add possible squares to possibilities[]
         let dataArr = monthData
-        if (types["time"] === "year") {
+        if (state.types["time"] === "year") {
             dataArr = yearData;
         }
         for (let index = 1; index < keys.length; index++) {
             let key = keys[index];
             // If the type is selected, add it to possibilities
-            if (types[key]) {
+            if (state.types[key]) {
                 possibilities.push(...dataArr[key]);
             }
         }
@@ -229,7 +229,7 @@ const Board = (props) => {
         }
 
         return newBoardData;
-    }, [types, monthData, yearData, openErrorModal]);
+    }, [state.types, monthData, yearData, openErrorModal]);
 
     // Check if board should be updated
     useEffect(() => {
@@ -249,7 +249,8 @@ const Board = (props) => {
             boardList.push(
                 <Box
                     key={key}
-                    xs={12/boardSize}>
+                    xs={12/boardSize}
+                    theme={state.theme}>
                     {key === center ? "FREE" : (key > center ? boardData[key - 1] : boardData[key])}
                 </Box>
             )
@@ -260,7 +261,8 @@ const Board = (props) => {
     return (
         <Aux>
             <Grid
-                className={classes.Container}
+                className={`${classes.LightContainer}
+                            ${state.theme === "dark" ? classes.DarkContainer : classes.LightContainer}`}
                 container rowSpacing={2}
                 columnSpacing={{ xs: 1, sm: 2, md: 1 }}>
                 {boardList}

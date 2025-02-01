@@ -9,7 +9,7 @@ const box = (props) => {
     return (
         <Grid
             index={props.index}
-            className={classes.Box}
+            className={`${classes.LightBox} ${props.theme === "dark" ? classes.DarkBox : classes.LightBox}`}
             xs={props.xs}
             minHeight={props.height}
             onClick={props.clicked}>{props.children}</Grid>

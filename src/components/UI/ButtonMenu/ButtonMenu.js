@@ -6,12 +6,12 @@ import classes from './ButtonMenu.module.css';
 
 const ButtonMenu = (props) => {
 
-    const { menuType, button1Func, button2Func, button1Text, button2Text } = props;
+    const { menuType, button1Func, button2Func, button1Text, button2Text, theme } = props;
 
     return (
         <Aux className={`${classes.ButtonMenu} ${classes[menuType]}`}>
-            <Button clicked={button1Func} btnType={menuType}>{button1Text}</Button>
-            <Button clicked={button2Func} btnType={menuType}>{button2Text}</Button>
+            <Button clicked={button1Func} btnType={menuType} theme={theme}>{button1Text}</Button>
+            <Button clicked={button2Func} btnType={menuType} theme={theme}>{button2Text}</Button>
         </Aux>
     )
 }
