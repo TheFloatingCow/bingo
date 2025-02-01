@@ -113,7 +113,7 @@ class App extends Component {
                     clicked={this.errorModalCancelHandler}>
                     <ErrorModal closeMenu={this.errorModalCancelHandler} />
                 </Modal>
-                <Title>monthly bingo</Title>
+                <Title>{this.state.types.time}ly bingo</Title>
                 <ButtonMenu
                     menuType="Main"
                     button1Func={this.newHandler}
