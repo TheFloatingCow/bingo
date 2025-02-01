@@ -2,7 +2,10 @@ Things to do maybe
 
 SOON ----------------------------------------
 Come up with challenges
-Make challenges clickable to toggle check
+Make challenges clickable
+- toggle check
+- replace square
+Make board printable
 
 EVENTUALLY ----------------------------------
 Make everything look better
@@ -11,6 +14,10 @@ Make everything look better
 - Background colour
 Add dark mode switch (maybe to EditModal)
 Add board size editor
-Add calendar due date
+Add calendar due date (timer)
+
+FAR FUTURE ---------------------------------
+Save stats of how many boards completed in a year etc.
+Do something on BINGO
 
 BUGS ---------------------------------------
