@@ -4,14 +4,27 @@
     background-color: transparent;
 }
 
-.ToggleButton {
+.LightToggleButton {
     font: inherit !important;
     font-weight: bold !important;
     font-size: 24px !important;
     border: 2px solid black !important;
 }
 
-.ToggleButton:hover {
+.DarkToggleButton {
+    font: inherit !important;
+    font-weight: bold !important;
+    font-size: 24px !important;
+    color: white !important;
+    border: 2px solid white !important;
+}
+
+.LightToggleButton:hover {
+    transition-duration: 0.3s;
+    /*color: gray;*/
+}
+
+.DarkToggleButton:hover {
     transition-duration: 0.3s;
     /*color: gray;*/
 }

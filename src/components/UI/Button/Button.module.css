@@ -10,7 +10,7 @@
 }
 
 .Button:hover {
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     /*color: gray;*/
     border: 2px solid rgb(82, 82, 82);
     color: rgb(82, 82, 82);
@@ -52,13 +52,24 @@
     border: 2px solid white;
 }
 
-.NewModal {
+.lightNewModal {
     color: black;
     border: 2px solid black;
 }
 
-.NewModal:hover {
-    transition-duration: 0.3s;
+.darkNewModal {
+    color: white;
+    border: 2px solid white;
+}
+
+.lightNewModal:hover {
+    transition-duration: 0.2s;
     /*color: gray;*/
     border: 2px solid #a8a8a8;
+}
+
+.darkNewModal:hover {
+    transition-duration: 0.2s;
+    color: #c0c0c0;
+    border: 2px solid #c0c0c0;
 }

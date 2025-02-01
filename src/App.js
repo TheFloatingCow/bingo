@@ -135,22 +135,25 @@ class App extends Component {
                     id="NewModal"
                     show={this.state.newModalOpen}
                     closeMenu={this.newCancelHandler}
-                    clicked={this.newCancelHandler}>
-                    <NewModal closeMenu={this.newCancelHandler} newBoard={this.newBoardHandler} />
+                    clicked={this.newCancelHandler}
+                    theme={this.state.theme}>
+                    <NewModal closeMenu={this.newCancelHandler} newBoard={this.newBoardHandler} theme={this.state.theme} />
                 </Modal>
                 <Modal
                     id="EditModal"
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
-                    clicked={this.editCancelHandler}>
-                    <EditModal state={this.state} closeMenu={this.editCancelHandler} editTypes={this.editTypeHandler} editTheme={this.editThemeHandler} />
+                    clicked={this.editCancelHandler}
+                    theme={this.state.theme}>
+                    <EditModal state={this.state} closeMenu={this.editCancelHandler} editTypes={this.editTypeHandler} editTheme={this.editThemeHandler} theme={this.state.theme} />
                 </Modal>
                 <Modal
                     id="ErrorModal"
                     show={this.state.errorModalOpen}
                     closeMenu={this.errorModalCancelHandler}
-                    clicked={this.errorModalCancelHandler}>
-                    <ErrorModal closeMenu={this.errorModalCancelHandler} />
+                    clicked={this.errorModalCancelHandler}
+                    theme={this.state.theme}>
+                    <ErrorModal closeMenu={this.errorModalCancelHandler} theme={this.state.theme} />
                 </Modal>
                 <Title>{this.state.types.time}ly bingo</Title>
                 <ButtonMenu

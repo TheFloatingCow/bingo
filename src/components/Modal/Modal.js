@@ -12,7 +12,8 @@ class Modal extends Component {
                     show={this.props.show}
                     clicked={this.props.clicked} />
                 <div
-                    className={classes.Modal}
+                    className={`${classes.LightModal}
+                                ${this.props.theme === "dark" ? classes.DarkModal : classes.LightModal}`}
                     style={{
                         transform: this.props.show ? 'translateY(0)' : 'translateY(80vh)',
                         opacity: this.props.show ? '1' : '0'

@@ -6,17 +6,19 @@ import ButtonMenu from '../../components/UI/ButtonMenu/ButtonMenu';
 
 const NewModal = (props) => {
 
-    const { closeMenu, newBoard } = props;
+    const { closeMenu, newBoard, theme } = props;
 
     return (
-        <Aux className={classes.NewModal}>
+        <Aux className={`${classes.LightNewModal}
+                        ${theme === "dark" ? classes.DarkNewModal : classes.LightNewModal}`}>
             Create new board?
             <ButtonMenu
                 menuType="NewModal"
                 button1Func={closeMenu}
                 button2Func={newBoard}
                 button1Text="Cancel"
-                button2Text="Confirm" />
+                button2Text="Confirm"
+                theme={theme} />
         </Aux>
     )
 }

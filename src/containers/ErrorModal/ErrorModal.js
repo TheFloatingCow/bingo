@@ -6,12 +6,13 @@ import Button from '../../components/UI/Button/Button';
 
 const ErrorModal = (props) => {
 
-    const { closeMenu } = props;
+    const { closeMenu, theme } = props;
 
     return (
-        <Aux className={classes.ErrorModal}>
+        <Aux className={`${classes.LightErrorModal}
+                        ${theme === "dark" ? classes.DarkErrorModal : classes.LightErrorModal}`}>
             <Aux>Error: Not enough challenges have been selected. The board will be incomplete!</Aux>
-            <Button clicked={closeMenu} btnType="NewModal">OK</Button>
+            <Button clicked={closeMenu} btnType="NewModal" theme={theme}>OK</Button>
         </Aux>
     )
 }

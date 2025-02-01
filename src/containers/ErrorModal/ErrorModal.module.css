@@ -1,8 +1,18 @@
-.ErrorModal {
+.LightErrorModal {
     padding: 0px;
     padding-left: 15%;
     padding-right: 15%;
     border: 2px solid #6abcff;
+    border-radius: 2px;
+    font-size: 25px;
+    position: relative;
+}
+
+.DarkErrorModal {
+    padding: 0px;
+    padding-left: 15%;
+    padding-right: 15%;
+    border: 2px solid black;
     border-radius: 2px;
     font-size: 25px;
     position: relative;
