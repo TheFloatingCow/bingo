@@ -12,7 +12,6 @@ Make everything look better
 - Make CheckboxMenu 2 columns instead of 1
 - Figure out modal styles
 - Background colour
-Add dark mode switch (maybe to EditModal)
 Add board size editor
 Add calendar due date (timer)
 Add your own challenges
@@ -23,3 +22,9 @@ Save stats of how many boards completed in a year etc.
 Do something on BINGO
 
 BUGS ---------------------------------------
+
+
+
+
+COMPLETED ---------------------------------
+Add dark mode switch (maybe to EditModal)
