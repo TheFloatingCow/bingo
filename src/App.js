@@ -66,9 +66,9 @@ class App extends Component {
 
     // State
     editThemeHandler = (newTheme) => {
-        this.setState({ theme: newTheme });
-        console.log("editThemeHandler");
-        console.log(this.state.theme);
+        this.setState({ theme: newTheme }, () => {
+            this.setState({backgroundColour: this.getRandomColour()});
+        });
     }
 
     editTypeHandler = (newTypes) => {
@@ -89,7 +89,7 @@ class App extends Component {
     getRandomColour = () => {
         return "hsl(" + 360 * Math.random() + "," +
                 (30 + 65 * Math.random()) + "%," + 
-                (80 + 10 * Math.random()) + "%)";
+                ((this.state.theme === "dark" ? 10 : 80) + 10 * Math.random()) + "%)";
     }
 
     componentDidMount() {
@@ -98,7 +98,7 @@ class App extends Component {
 
     render() {
         return (
-            <main className={classes.App} style={{backgroundColor: this.state.backgroundColour}}>
+            <main className={`${classes.Light} ${this.state.theme === "dark" ? classes.Dark : classes.Light}`} style={{backgroundColor: this.state.backgroundColour}}>
                 <Modal
                     id="NewModal"
                     show={this.state.newModalOpen}

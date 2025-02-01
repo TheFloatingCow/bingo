@@ -1,4 +1,4 @@
-.App {
+.Light {
     text-align: center;
     background-color: #6abcff;
     min-height: 100vh;
@@ -8,4 +8,16 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
+}
+
+.Dark {
+    text-align: center;
+    background-color: #0b1e73;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
