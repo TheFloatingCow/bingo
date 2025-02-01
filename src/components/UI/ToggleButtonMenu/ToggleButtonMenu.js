@@ -7,9 +7,9 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 const ToggleButtonMenu = (props) => {
 
-    const { time, update } = props;
+    const { option, update, option1, option2 } = props;
 
-    const [alignment, setAlignment] = useState(time);
+    const [alignment, setAlignment] = useState(option);
 
     const handleChange = (event, newAlignment) => {
         if (newAlignment !== null) {
@@ -26,8 +26,8 @@ const ToggleButtonMenu = (props) => {
                 exclusive
                 onChange={handleChange}
                 aria-label="Time">
-                <ToggleButton className={classes.ToggleButton} value="month">Monthly</ToggleButton>
-                <ToggleButton className={classes.ToggleButton} value="year">Yearly</ToggleButton>
+                <ToggleButton className={classes.ToggleButton} value="month">{option1}</ToggleButton>
+                <ToggleButton className={classes.ToggleButton} value="year">{option2}</ToggleButton>
             </ToggleButtonGroup>
         </Aux>
     )

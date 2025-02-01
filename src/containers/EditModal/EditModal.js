@@ -16,13 +16,19 @@ const EditModal = (props) => {
         editTypes(newTypes);
     }
 
+    const updateTheme = (newTheme) => {
+        console.log("HELLO");
+        let newTypes = { ...types };
+        newTypes["time"] = newTheme;
+    }
+
     const updateTypes = (newTypes) => {
         editTypes(newTypes);
     }
 
     return (
         <Aux className={classes.EditModal}>
-            <ToggleButtonMenu time={types["time"]} update={updateTime} />
+            <ToggleButtonMenu option={types["time"]} update={updateTime} option1={"Monthly"} option2={"Yearly"} />
             <CheckboxMenu types={types} update={updateTypes} />
             <Button clicked={closeMenu} btnType="NewModal">Done</Button>
         </Aux>
