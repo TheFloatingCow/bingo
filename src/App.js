@@ -20,7 +20,11 @@ class App extends Component {
    
     state = {
         theme: "light",
-        backgroundColour: "#6abcff",
+        backgroundColour: {
+            h: 207,
+            s: 100,
+            l: 71
+        },
         editModalOpen: false,
         newModalOpen: false,
         errorModalOpen: false,
@@ -67,7 +71,7 @@ class App extends Component {
     // State
     editThemeHandler = (newTheme) => {
         this.setState({ theme: newTheme }, () => {
-            this.setState({backgroundColour: this.getRandomColour()});
+            this.toggleBackgroundLightnessLevel();
         });
     }
 
@@ -87,9 +91,33 @@ class App extends Component {
     }
 
     getRandomColour = () => {
-        return "hsl(" + 360 * Math.random() + "," +
-                (30 + 65 * Math.random()) + "%," + 
-                ((this.state.theme === "dark" ? 10 : 80) + 10 * Math.random()) + "%)";
+        return {
+            h: Math.round(360 * Math.random()),
+            s: Math.round(30 + 65 * Math.random()),
+            l: Math.round((this.state.theme === "dark" ? 10 : 80) + 10 * Math.random())
+        }
+        
+        /*
+        "hsl(" +
+                Math.round(360 * Math.random()) + "," +
+                Math.round(30 + 65 * Math.random()) + "%," + 
+                Math.round((this.state.theme === "dark" ? 10 : 80) + 10 * Math.random()) + "%)";
+        */
+    }
+
+    toggleBackgroundLightnessLevel = () => {
+        console.log("HERE");
+
+        const newLightnessValue = this.state.theme === "dark"
+            ? this.state.backgroundColour.l - 70
+            : this.state.backgroundColour.l + 70;
+
+        this.setState(prevState => ({
+            backgroundColour: {
+                ...prevState.backgroundColour,
+                l: newLightnessValue
+            }
+        }));
     }
 
     componentDidMount() {
@@ -100,7 +128,11 @@ class App extends Component {
         return (
             <main className={`${classes.Light}
                               ${this.state.theme === "dark" ? classes.Dark : classes.Light}`}
-                              style={{backgroundColor: this.state.backgroundColour}}>
+                              style={{backgroundColor:
+                                "hsl(" +
+                                this.state.backgroundColour.h + "," +
+                                this.state.backgroundColour.s + "%," + 
+                                this.state.backgroundColour.l + "%)"}}>
                 <Modal
                     id="NewModal"
                     show={this.state.newModalOpen}
