@@ -106,8 +106,6 @@ class App extends Component {
     }
 
     toggleBackgroundLightnessLevel = () => {
-        console.log("HERE");
-
         const newLightnessValue = this.state.theme === "dark"
             ? this.state.backgroundColour.l - 70
             : this.state.backgroundColour.l + 70;
