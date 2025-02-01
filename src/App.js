@@ -65,6 +65,12 @@ class App extends Component {
     }
 
     // State
+    editThemeHandler = (newTheme) => {
+        this.setState({ theme: newTheme });
+        console.log("editThemeHandler");
+        console.log(this.state.theme);
+    }
+
     editTypeHandler = (newTypes) => {
         this.setState({ types: newTypes });
     }
@@ -105,7 +111,7 @@ class App extends Component {
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
                     clicked={this.editCancelHandler}>
-                    <EditModal state={this.state} closeMenu={this.editCancelHandler} editTypes={this.editTypeHandler} />
+                    <EditModal state={this.state} closeMenu={this.editCancelHandler} editTypes={this.editTypeHandler} editTheme={this.editThemeHandler} />
                 </Modal>
                 <Modal
                     id="ErrorModal"
