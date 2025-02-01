@@ -19,6 +19,7 @@ class App extends Component {
     */
    
     state = {
+        theme: "light",
         backgroundColour: "#6abcff",
         editModalOpen: false,
         newModalOpen: false,
@@ -104,7 +105,7 @@ class App extends Component {
                     show={this.state.editModalOpen}
                     closeMenu={this.editCancelHandler}
                     clicked={this.editCancelHandler}>
-                    <EditModal types={this.state.types} closeMenu={this.editCancelHandler} editTypes={this.editTypeHandler} />
+                    <EditModal state={this.state} closeMenu={this.editCancelHandler} editTypes={this.editTypeHandler} />
                 </Modal>
                 <Modal
                     id="ErrorModal"
